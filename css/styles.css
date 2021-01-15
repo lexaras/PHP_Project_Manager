@@ -5,6 +5,10 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    background-color: white;
+}
+body{
+    background-color: cadetblue;
 }
 
 table td,
@@ -27,4 +31,13 @@ table th {
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+.head{
+    display: flex;
+}
+h1{
+    margin-left: 30px;
+}
+#name{
+    margin-left: 50%;
 }

@@ -1,7 +1,11 @@
 TODO:
-    -UPDATE BUTTON (update ID, employee_name, project for employess)
-                   (update project_ID, project_name for projects)
-    Update-->new path with update form->submit(update) informaton redirect back to path(employees/projects)? 
-
-    -Play with styles
-    -Split index.php code to make its easier to understand the code
+    -UPDATE BUTTON (update ID, employee_name, project for employess)                                                 DONE
+                   (update project_ID, project_name for projects)                                                    DONE
+    Update-->new path with update form->submit(update) informaton redirect back to path(employees/projects)?         DONE
+ 
+    -Play with styles                                                             Minimal changes were done         Kinda DONE(upgrades are always viable)       
+    
+    
+    
+    
+    -Split index.php code to make its easier to understand the code and fix redundant code(make functions to display tables)     
