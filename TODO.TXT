@@ -8,4 +8,80 @@ TODO:
     
     
     
-    -Split index.php code to make its easier to understand the code and fix redundant code(make functions to display tables)     
+    -Split index.php code to make its easier to understand the code and fix redundant code(make functions to display tables) 
+
+
+Just in case You have problems with importing DB, use these commands to manually create DB and insert info!
+
+CREATE DATABASE Project_Manager;
+use Project_Manager;
+
+CREATE TABLE projects (
+  id INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  project_name VARCHAR(30) NOT NULL
+) ;
+
+CREATE TABLE employees (
+  id INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  employee_name VARCHAR(30) NOT NULL,
+  project_id INT,
+  INDEX par_ind (project_id),
+  FOREIGN KEY (project_id) REFERENCES projects(id) 
+							ON DELETE SET NULL
+							ON UPDATE CASCADE
+  
+);
+
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(1, 'Java');
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(2, 'Php');
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(3, 'CSS');
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(4, 'HTML');
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(5, 'Python');
+INSERT INTO `project_manager`.`projects`
+(`id`,`project_name`)
+VALUES
+(6, 'Pascal');
+
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(1,'Benas',1);
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(2,'Rokas',1);
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(3,'Tomas',2);
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(4,'Goda',3);
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(5,'Toma',4);
+INSERT INTO `project_manager`.`employees`
+(`id`,`employee_name`,`project_id`)
+VALUES
+(6,'Marty',null);
+
+
