@@ -9,7 +9,7 @@ TODO:
     
     
     -Split index.php code to make its easier to understand the code and fix redundant code(make functions to display tables) 
-
+    -Fix update employee functionality allowing to delete existing project(from SELECT options) 
 
 Just in case You have problems with importing DB, use these commands to manually create DB and insert info!
 
