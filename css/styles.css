@@ -7,10 +7,6 @@ table {
     width: 100%;
     background-color: white;
 }
-body{
-    background-color: cadetblue;
-}
-
 table td,
 table th {
     border: 1px solid #ddd;

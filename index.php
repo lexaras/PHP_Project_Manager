@@ -178,10 +178,10 @@ if (!$conn) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     print('<form action="" name="edit" method="POST">');
-                    print('<input type="number" name="employee_id" value="' . $row['id'] . '">');
                     print('<input type="text" name="employee_Name" value="' . $row['employee_name'] . '">');
-                    print('<select name="project">');
-                    print('<option "selected">Select</option>');
+                    print('<select name="project"   >');
+                    //print('<option Select disabled hidden></option>');
+                    print('<option >Select</option>');
                     $sql = "SELECT id, project_name FROM projects";
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0) {
@@ -253,7 +253,12 @@ if (!$conn) {
         $new_id = $_POST['employee_id'];
         $name = $_POST['employee_Name'];
         $project = $_POST['project'];
-        $sql = "UPDATE employees SET id= '$new_id',employee_name= '$name', project_id = $project WHERE id = $id";
+        //Updating only id or name project was not giving any information so the query was not run
+        //need to fix with default result
+        //$sql = "UPDATE employees SET employee_name= '$name', project_id = $project WHERE id = $id";
+        $sql = "UPDATE employees SET employee_name= '$name' WHERE id = $id";
+        $result = mysqli_query($conn, $sql);
+        $sql = "UPDATE employees SET  project_id = '$project' WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         header("Location: ?path=Employees");
     }
